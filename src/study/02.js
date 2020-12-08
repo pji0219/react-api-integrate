@@ -1,3 +1,18 @@
+// useReducer로 API 상태관리
+
+// App.js
+import React from 'react';
+import User from './components/users';
+
+
+function App() {
+    return <User/>;
+}
+
+export default App;
+
+
+// User.js
 import React, { useEffect, useReducer } from 'react';
 import axios from 'axios';
 

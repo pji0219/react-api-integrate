@@ -21,7 +21,7 @@ function User() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const fetchUsers = async () => {
+    const fetchUsers = async () => { // fetchUsers 함수를 밖으로 꺼내줌
         try {
             setUsers(null);
             setError(null);
@@ -38,11 +38,11 @@ function User() {
     }
    
     useEffect(() => {
-        fetchUsers();
+        fetchUsers(); // useEffect에서는 fetchUsers함수를 호출 해줌
     }, []);
 
     if (loading) return <div>로딩중..</div>
-    if (error) return <div>에러가 발생하였습니다.</div>
+    if (error) return <div>에러가 발생 하였습니다.</div>
     if (!users) return null;
 
     return(
@@ -54,7 +54,7 @@ function User() {
                     </li>
                 ))}
             </ul>
-            <button onClick={fetchUsers}>다시 불러오기</button>
+            <button onClick={fetchUsers}>다시 불러오기</button> {/* 버튼 클릭시 API 재요청 되게 함수 연결 */}
         </>
     );
 }
